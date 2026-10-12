@@ -12,20 +12,32 @@ public class TestGaulois {
 		Romain minus = new Romain("Minus", 6);
 		Romain brutus = new Romain("Brutus", 14);
 		
-		Druide panomarix = new Druide("Panomarix", 2);
-		
-		panomarix.fabriquerPotion(4, 3);
-		panomarix.booster(obelix);
-		panomarix.booster(asterix);
+		Druide panomarix = new Druide("Panoramix", 2);
 		
 		asterix.parler("Bonjour " + obelix.getNom() + ".");
 		obelix.parler("Bonjour " + asterix.getNom() + ". Ca te dirais d'aller chasser des sangliers?)");
 		asterix.parler("Oui très bonne idée.");
 		
-		System.out.println("Dans la forêt Astérix et Obélix tombent nez à nez sur le romain Minus.");
+		System.out.println("Dans la forêt " + asterix + " et " + obelix + " tombent nez à nez sur le romain " + minus.getNom() + ".");
+		System.out.println();
 		
-		while (brutus.getForce() > 0) {
+		
+		for (int i = 0; i < 3; i++) {
+			asterix.frapper(minus);
+		}
+		
+		System.out.println();
+		
+		
+		panomarix.fabriquerPotion(4, 3);
+		panomarix.booster(obelix);
+		panomarix.booster(asterix);
+		
+		System.out.println();
+		
+		for (int i = 0; i < 3; i++) {
 			asterix.frapper(brutus);
 		}
+		
 	}
 }
