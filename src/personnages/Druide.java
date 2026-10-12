@@ -17,10 +17,10 @@ public class Druide {
 	}
 	
 	public void parler(String texte) {
-		System.out.println(prendeParole() + "\"" + texte + "\"");
+		System.out.println(prendreParole() + "\"" + texte + "\"");
 	}
 	
-	private String prendeParole() {
+	private String prendreParole() {
 		return "Le Druide " + nom + " : ";
 	}
 
@@ -35,8 +35,8 @@ public class Druide {
 	public void booster(Gaulois gaulois) {
 		String nomGaulois = gaulois.getNom();
 		if (chaudron.resterPotion() == true) {
-			if (nomGaulois != null && nomGaulois.equals("Obelix")) {
-				parler("Non, " + nomGaulois + " Non!... Et tu le sais très bien!");
+			if (gaulois != null && nomGaulois.equals("Obélix")) {
+				parler("Non, " + nomGaulois + " Non !... Et tu le sais très bien !");
 			}
 			else {
 				int forcePotion = chaudron.prendreLouche();
@@ -45,7 +45,7 @@ public class Druide {
 			}
 		}
 		else {
-			parler("Désolé " + nomGaulois + " il n'y a plus une seulle goutte de potion.");
+			parler("Désolé " + nomGaulois + " il n'y a plus une seule goutte de potion.");
 		}
 	}
 

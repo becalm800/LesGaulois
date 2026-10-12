@@ -48,10 +48,10 @@ public class Gaulois {
 			parler("Bonjour, je m'appelle " + nom + ". Je voyage de villages en villages.");
 		}
 		else if (village.getChef() == this) {
-			parler(" Bonjour, je m'appelle " + nom + ". Je suis le chef du village : " + village.getNom() + ".");
+			parler("Bonjour, je m'appelle " + nom + ". Je suis le chef du village : " + village.getNom() + ".");
 		}
 		else{
-			parler(" Bonjour, je m'appelle " + nom + ". J'habite au village : " + village.getNom() + ".");
+			parler("Bonjour, je m'appelle " + nom + ". J'habite au village : " + village.getNom() + ".");
 		}
 		
 	}
@@ -61,7 +61,7 @@ public class Gaulois {
 	}
 	
 	public static void main(String[] args) {
-		Gaulois asterix = new Gaulois("Asterix", 8);
+		Gaulois asterix = new Gaulois("Astérix", 8);
 		System.out.println(asterix);
 	}
 }

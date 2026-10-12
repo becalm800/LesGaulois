@@ -6,16 +6,16 @@ import personnages.Romain;
 
 public class TestGaulois {
 	public static void main(String[] args) {
-		Gaulois asterix = new Gaulois("Asterix", 8);
-		Gaulois obelix = new Gaulois("Obelix", 16);
+		Gaulois asterix = new Gaulois("Astérix", 8);
+		Gaulois obelix = new Gaulois("Obélix", 16);
 		
 		Romain minus = new Romain("Minus", 6);
 		Romain brutus = new Romain("Brutus", 14);
 		
-		Druide panomarix = new Druide("Panoramix", 2);
+		Druide panoramix = new Druide("Panoramix", 2);
 		
 		asterix.parler("Bonjour " + obelix.getNom() + ".");
-		obelix.parler("Bonjour " + asterix.getNom() + ". Ca te dirais d'aller chasser des sangliers?)");
+		obelix.parler("Bonjour " + asterix.getNom() + ". Ca te dirais d'aller chasser des sangliers ?)");
 		asterix.parler("Oui très bonne idée.");
 		
 		System.out.println("Dans la forêt " + asterix + " et " + obelix + " tombent nez à nez sur le romain " + minus.getNom() + ".");
@@ -29,9 +29,9 @@ public class TestGaulois {
 		System.out.println();
 		
 		
-		panomarix.fabriquerPotion(4, 3);
-		panomarix.booster(obelix);
-		panomarix.booster(asterix);
+		panoramix.fabriquerPotion(4, 3);
+		panoramix.booster(obelix);
+		panoramix.booster(asterix);
 		
 		System.out.println();
 		

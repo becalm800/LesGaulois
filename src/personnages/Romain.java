@@ -1,8 +1,12 @@
 package personnages;
 
+import objets.Equipement;
+
 public class Romain {
 	private String nom;
 	private int force;
+	private Equipement[] equipements = new Equipement[2];
+	private int nbEquipements = 0;
 	
 	public Romain(String nom, int force) {
 		this.nom = nom;
@@ -41,12 +45,46 @@ public class Romain {
 		assert isInvariantVerified(); //invariant
 	}
 	
+	private void ajouterEquipement(Equipement equipement) {
+		System.out.println("Le soldat " + nom + " s’équipe avec un " + equipement + ".");
+		equipements[nbEquipements] = equipement;
+		nbEquipements++;
+	}
+	
+	public void sEquiper(Equipement equipement) {
+		switch(nbEquipements) {
+			case 2:
+				System.out.println("Le soldat " + nom + " est déjà bien protégé !");
+				break;
+			case 1:
+				if (equipement == equipements[0]) {
+					System.out.println("Le soldat " + nom + " possède déjà un " + equipement + " !");
+				}
+				else {
+					ajouterEquipement(equipement);
+				}
+				break;
+			default:
+				ajouterEquipement(equipement);
+				break;
+		}
+	}
+	
 	private boolean isInvariantVerified() {
 		return force >= 0;
 	}
 	
 	public static void main(String[] args) {
 		Romain minus = new Romain("Minus", 6);
+		
+		System.out.println(Equipement.CASQUE);
+		System.out.println(Equipement.BOUCLIER);
+		
+		minus.sEquiper(Equipement.CASQUE);
+		minus.sEquiper(Equipement.CASQUE);
+		minus.sEquiper(Equipement.BOUCLIER);
+		minus.sEquiper(Equipement.CASQUE);
+		
 	}
 	
 }
